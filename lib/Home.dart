@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         width: 70,
@@ -47,7 +47,25 @@ class Home extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container()
+                      Container(
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                            Container(
+                              width: 40,
+                              height: 40,
+                              decoration: ShapeDecoration(
+                                  gradient: LinearGradient(
+                                      begin: Alignment(0.00, -1.00),
+                                      end: Alignment(0, 1),
+                                      colors: []),
+                                  shape: OvalBorder(
+                                    side: BorderSide(
+                                      width: 1.50,
+                                    ),
+                                  )),
+                            )
+                          ]))
                     ],
                   ),
                   SizedBox(
