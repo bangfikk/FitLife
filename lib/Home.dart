@@ -302,9 +302,7 @@ class _HomeState extends State<Home> {
               ),
             )),
             Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
               child: Column(
                 children: [
                   Row(
@@ -325,92 +323,95 @@ class _HomeState extends State<Home> {
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text('data'),
                             ),
                           ),
-                          child: Center(
-                            child: Text('data'),
+                          SizedBox(
+                            width: 10,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                          Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text('data'),
                             ),
                           ),
-                          child: Center(
-                            child: Text('data'),
+                          SizedBox(
+                            width: 10,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                          Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text('data'),
                             ),
                           ),
-                          child: Center(
-                            child: Text('data'),
+                          SizedBox(
+                            width: 10,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                          Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text('data'),
                             ),
                           ),
-                          child: Center(
-                            child: Text('data'),
+                          SizedBox(
+                            width: 10,
                           ),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                          Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text('data'),
                             ),
                           ),
-                          child: Center(
-                            child: Text('data'),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],
