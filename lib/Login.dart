@@ -41,8 +41,8 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 250,
-                    width: 250,
+                    height: 200,
+                    width: 200,
                     child: Image(
                         image: AssetImage("assets/images/lotus.png"),
                         fit: BoxFit.fill),

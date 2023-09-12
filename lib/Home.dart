@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+import 'Journal.dart';
+import 'Meditasi.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,7 +12,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0; // Index of the selected tab
+  List pages = [
+    Home(),
+    Journal(),
+    Meditasi(),
+  ];
+  int currentIndex = 0;
+  void onTap(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -713,31 +728,34 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorites',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.all(10),
+          child: GNav(
+            tabBorderRadius: 15,
+            activeColor: Colors.white,
+            color: Colors.grey,
+            tabBackgroundColor: Color(0xFF0B43D8),
+            gap: 8,
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            tabs: const [
+              GButton(
+                icon: Icons.home,
+                text: 'Beranda',
+              ),
+              GButton(
+                icon: Icons.search_rounded,
+                text: 'Journal',
+              ),
+              GButton(
+                icon: Icons.home,
+                text: 'Meditasi',
+              ),
+              GButton(
+                icon: Icons.home,
+                text: 'Akun',
+              ),
+            ],
+          ),
         ),
       ),
     );
