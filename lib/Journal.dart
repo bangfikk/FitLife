@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Journal extends StatefulWidget {
   const Journal({super.key});
@@ -124,7 +123,8 @@ class _JournalState extends State<Journal> {
                             height: 210,
                             decoration: ShapeDecoration(
                                 image: DecorationImage(
-                                    image: AssetImage('assets/images/game.png'),
+                                    image: AssetImage(
+                                        'assets/images/metalhealt.png'),
                                     fit: BoxFit.fill),
                                 shape: RoundedRectangleBorder(
                                     side: BorderSide(
@@ -137,7 +137,7 @@ class _JournalState extends State<Journal> {
                                   Row(
                                     children: [
                                       Container(
-                                        height: 57,
+                                        height: 60,
                                         width: 148,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -156,16 +156,39 @@ class _JournalState extends State<Journal> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    '5-10 Menit',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
+                                                  Text.rich(TextSpan(children: [
+                                                    TextSpan(
+                                                        text: '5-10 Menit\n',
+                                                        style: TextStyle(
+                                                            color: Color(
+                                                                0xFF757575),
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 10,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Kesehatan Mental:\n',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Pentingnya Merawat Diri',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                  ]))
                                                 ],
                                               ),
                                             ],
@@ -182,9 +205,9 @@ class _JournalState extends State<Journal> {
                             width: 150,
                             height: 210,
                             decoration: ShapeDecoration(
+                                color: Colors.grey,
                                 image: DecorationImage(
-                                    image: AssetImage('assets/images/game.png'),
-                                    fit: BoxFit.fill),
+                                    image: AssetImage(''), fit: BoxFit.fill),
                                 shape: RoundedRectangleBorder(
                                     side: BorderSide(
                                         width: 1, color: Color(0xFFE5E7EB)),
@@ -196,7 +219,7 @@ class _JournalState extends State<Journal> {
                                   Row(
                                     children: [
                                       Container(
-                                        height: 57,
+                                        height: 60,
                                         width: 148,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -215,16 +238,39 @@ class _JournalState extends State<Journal> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    '5-10 Menit',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
+                                                  Text.rich(TextSpan(children: [
+                                                    TextSpan(
+                                                        text: '5-10 Menit\n',
+                                                        style: TextStyle(
+                                                            color: Color(
+                                                                0xFF757575),
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 10,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Kesehatan Mental:\n',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Pentingnya Merawat Diri',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                  ]))
                                                 ],
                                               ),
                                             ],
@@ -252,9 +298,9 @@ class _JournalState extends State<Journal> {
                             width: 150,
                             height: 210,
                             decoration: ShapeDecoration(
+                                color: Colors.grey,
                                 image: DecorationImage(
-                                    image: AssetImage('assets/images/game.png'),
-                                    fit: BoxFit.fill),
+                                    image: AssetImage(''), fit: BoxFit.fill),
                                 shape: RoundedRectangleBorder(
                                     side: BorderSide(
                                         width: 1, color: Color(0xFFE5E7EB)),
@@ -266,7 +312,7 @@ class _JournalState extends State<Journal> {
                                   Row(
                                     children: [
                                       Container(
-                                        height: 57,
+                                        height: 60,
                                         width: 148,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -285,16 +331,39 @@ class _JournalState extends State<Journal> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    '5-10 Menit',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
+                                                  Text.rich(TextSpan(children: [
+                                                    TextSpan(
+                                                        text: '5-10 Menit\n',
+                                                        style: TextStyle(
+                                                            color: Color(
+                                                                0xFF757575),
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 10,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Kesehatan Mental:\n',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Pentingnya Merawat Diri',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                  ]))
                                                 ],
                                               ),
                                             ],
@@ -311,9 +380,9 @@ class _JournalState extends State<Journal> {
                             width: 150,
                             height: 210,
                             decoration: ShapeDecoration(
+                                color: Colors.grey,
                                 image: DecorationImage(
-                                    image: AssetImage('assets/images/game.png'),
-                                    fit: BoxFit.fill),
+                                    image: AssetImage(''), fit: BoxFit.fill),
                                 shape: RoundedRectangleBorder(
                                     side: BorderSide(
                                         width: 1, color: Color(0xFFE5E7EB)),
@@ -325,7 +394,7 @@ class _JournalState extends State<Journal> {
                                   Row(
                                     children: [
                                       Container(
-                                        height: 57,
+                                        height: 60,
                                         width: 148,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -344,16 +413,39 @@ class _JournalState extends State<Journal> {
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
                                                 children: [
-                                                  Text(
-                                                    '5-10 Menit',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
+                                                  Text.rich(TextSpan(children: [
+                                                    TextSpan(
+                                                        text: '5-10 Menit\n',
+                                                        style: TextStyle(
+                                                            color: Color(
+                                                                0xFF757575),
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 10,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Kesehatan Mental:\n',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    TextSpan(
+                                                        text:
+                                                            'Pentingnya Merawat Diri',
+                                                        style: TextStyle(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 12,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                  ]))
                                                 ],
                                               ),
                                             ],
@@ -369,38 +461,6 @@ class _JournalState extends State<Journal> {
                         ])
                   ],
                 ),
-              ),
-            ],
-          ),
-        ),
-        bottomNavigationBar: Container(
-          padding: EdgeInsets.all(10),
-          child: GNav(
-            tabBorderRadius: 15,
-            activeColor: Colors.white,
-            color: Colors.grey,
-            tabBackgroundColor: Color(0xFF0B43D8),
-            gap: 8,
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            onTabChange: (index) {
-              print(index);
-            },
-            tabs: const [
-              GButton(
-                icon: Icons.home,
-                text: 'Beranda',
-              ),
-              GButton(
-                icon: Icons.search_rounded,
-                text: 'Journal',
-              ),
-              GButton(
-                icon: Icons.home,
-                text: 'Meditasi',
-              ),
-              GButton(
-                icon: Icons.home,
-                text: 'Akun',
               ),
             ],
           ),

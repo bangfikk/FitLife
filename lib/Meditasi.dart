@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Meditasi extends StatefulWidget {
   const Meditasi({super.key});
@@ -124,12 +123,12 @@ class _MeditasiState extends State<Meditasi> {
                           height: 220,
                           decoration: ShapeDecoration(
                               image: DecorationImage(
-                                  image: AssetImage('assets/images/game.png'),
+                                  image: AssetImage('assets/images/basic.png'),
                                   fit: BoxFit.fill),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
-                                  borderRadius: BorderRadius.circular(10))),
+                                  borderRadius: BorderRadius.circular(12))),
                           child: Container(
                             padding: EdgeInsetsDirectional.all(12),
                             child: Row(
@@ -145,7 +144,7 @@ class _MeditasiState extends State<Meditasi> {
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(7))),
+                                                  BorderRadius.circular(10))),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -156,7 +155,7 @@ class _MeditasiState extends State<Meditasi> {
                                                 fontFamily: 'Poppins',
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w600),
-                                          )
+                                          ),
                                         ],
                                       ),
                                     )
@@ -171,12 +170,13 @@ class _MeditasiState extends State<Meditasi> {
                           height: 220,
                           decoration: ShapeDecoration(
                               image: DecorationImage(
-                                  image: AssetImage('assets/images/game.png'),
+                                  image: AssetImage(
+                                      'assets/images/metalhealt.png'),
                                   fit: BoxFit.fill),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
-                                  borderRadius: BorderRadius.circular(10))),
+                                  borderRadius: BorderRadius.circular(12))),
                           child: Container(
                             padding: EdgeInsetsDirectional.all(12),
                             child: Row(
@@ -192,7 +192,7 @@ class _MeditasiState extends State<Meditasi> {
                                           color: Colors.white,
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
-                                                  BorderRadius.circular(7))),
+                                                  BorderRadius.circular(10))),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -357,38 +357,6 @@ class _MeditasiState extends State<Meditasi> {
             ),
           ],
         )),
-        bottomNavigationBar: Container(
-          padding: EdgeInsets.all(10),
-          child: GNav(
-            tabBorderRadius: 15,
-            activeColor: Colors.white,
-            color: Colors.grey,
-            tabBackgroundColor: Color(0xFF0B43D8),
-            gap: 8,
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            onTabChange: (index) {
-              print(index);
-            },
-            tabs: const [
-              GButton(
-                icon: Icons.home,
-                text: 'Beranda',
-              ),
-              GButton(
-                icon: Icons.search_rounded,
-                text: 'Journal',
-              ),
-              GButton(
-                icon: Icons.home,
-                text: 'Meditasi',
-              ),
-              GButton(
-                icon: Icons.home,
-                text: 'Akun',
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
