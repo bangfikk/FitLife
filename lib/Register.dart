@@ -1,3 +1,4 @@
+import 'package:fitlife/Home.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -156,7 +157,10 @@ class _RegisterState extends State<Register> {
                       height: 58,
                       width: 342,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Home()));
+                        },
                         child: Text(
                           "Daftar",
                           style: TextStyle(

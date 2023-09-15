@@ -17,8 +17,8 @@ class _MeditasiState extends State<Meditasi> {
             child: Column(
           children: [
             Container(
-              width: 360,
-              height: 263,
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height / 3,
               decoration: ShapeDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(0.00, -1.00),
@@ -41,7 +41,7 @@ class _MeditasiState extends State<Meditasi> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Journal',
+                          'Meditasi',
                           style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 50,
@@ -55,6 +55,7 @@ class _MeditasiState extends State<Meditasi> {
                       height: 24,
                     ),
                     Container(
+                      width: MediaQuery.of(context).size.width,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -112,11 +113,11 @@ class _MeditasiState extends State<Meditasi> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: Column(
                 children: [
                   Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
                           width: 155,
@@ -124,7 +125,7 @@ class _MeditasiState extends State<Meditasi> {
                           decoration: ShapeDecoration(
                               image: DecorationImage(
                                   image: AssetImage('assets/images/basic.png'),
-                                  fit: BoxFit.fill),
+                                  fit: BoxFit.cover),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
@@ -172,7 +173,7 @@ class _MeditasiState extends State<Meditasi> {
                               image: DecorationImage(
                                   image: AssetImage(
                                       'assets/images/metalhealt.png'),
-                                  fit: BoxFit.fill),
+                                  fit: BoxFit.cover),
                               shape: RoundedRectangleBorder(
                                   side: BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
@@ -249,15 +250,15 @@ class _MeditasiState extends State<Meditasi> {
                     child: Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Container(
                               width: 150,
                               height: 210,
                               decoration: ShapeDecoration(
                                   image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/images/game.png'),
+                                      image: AssetImage(
+                                          'assets/images/kecanduangame.png'),
                                       fit: BoxFit.fill),
                                   shape: RoundedRectangleBorder(
                                       side: BorderSide(
