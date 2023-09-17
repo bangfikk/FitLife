@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "233679094513",
-    "project_id": "login-register-fitlife-d03da",
-    "storage_bucket": "login-register-fitlife-d03da.appspot.com"
+    "project_number": "271161443317",
+    "project_id": "login-register-fitlife-1b476",
+    "storage_bucket": "login-register-fitlife-1b476.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233679094513:android:6530e8c7856bb214dedf50",
+        "mobilesdk_app_id": "1:271161443317:android:182ea24abcb04e100456bc",
         "android_client_info": {
           "package_name": "com.example.fitlife"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAR0z9FQxJfgEFZMxFaGZPAXu8PsKcvzt0"
+          "current_key": "AIzaSyAZkkRm-8tWLWxm44CCa_9Ffl2-y0ZDZfI"
         }
       ],
       "services": {

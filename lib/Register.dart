@@ -1,4 +1,6 @@
-import 'package:fitlife/Home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitlife/firebase_auth_implementation/firebase_auth_services.dart';
+
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -9,6 +11,19 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   bool visibiltypass = false;
   bool? isChechked = false;
 
@@ -45,6 +60,7 @@ class _RegisterState extends State<Register> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: _usernameController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.person_2_outlined),
                         hintText: 'Nama',
@@ -56,6 +72,7 @@ class _RegisterState extends State<Register> {
                     height: 10,
                   ),
                   TextFormField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.email_outlined),
                         hintText: 'Alamat Email',
@@ -67,6 +84,7 @@ class _RegisterState extends State<Register> {
                     height: 10,
                   ),
                   TextField(
+                    controller: _passwordController,
                     obscureText: !visibiltypass,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.lock_outlined),
@@ -156,21 +174,21 @@ class _RegisterState extends State<Register> {
                   SizedBox(
                       height: 58,
                       width: 342,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Home()));
-                        },
-                        child: Text(
-                          "Daftar",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.w500),
+                      child: GestureDetector(
+                        onTap: _signUp,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Daftar",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(41))),
                         ),
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(41))),
                       )),
                   SizedBox(
                     height: 10,
@@ -357,5 +375,23 @@ class _RegisterState extends State<Register> {
         ),
       ),
     );
+  }
+
+  void _signUp() async {
+    // ignore: unused_local_variable
+    String username = _usernameController.text;
+
+    String email = _emailController.text;
+
+    String password = _passwordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("user is succes");
+      Navigator.pushNamed(context, "/main_bottom");
+    } else {
+      print("some eror happen");
+    }
   }
 }

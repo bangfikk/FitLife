@@ -1,3 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitlife/firebase_auth_implementation/firebase_auth_services.dart';
+
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -8,6 +11,20 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  // ignore: unused_field
+  bool _isSigninng = false;
+  // ignore: unused_field
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  @override
+  void dispose() {
+    _emailController;
+    _passwordController;
+    super.dispose();
+  }
+
   bool visibiltypass = false;
 
   @override
@@ -51,6 +68,7 @@ class _LoginState extends State<Login> {
                     height: 10,
                   ),
                   TextField(
+                    controller: _emailController,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.email_outlined),
                         hintText: 'Alamat Email',
@@ -62,6 +80,7 @@ class _LoginState extends State<Login> {
                     height: 10,
                   ),
                   TextField(
+                    controller: _passwordController,
                     obscureText: !visibiltypass,
                     decoration: InputDecoration(
                         prefixIcon: Icon(Icons.lock_outlined),
@@ -101,18 +120,21 @@ class _LoginState extends State<Login> {
                   SizedBox(
                       height: 58,
                       width: 342,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Masuk",
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Poppins',
+                      child: GestureDetector(
+                        onTap: _singnIn,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Masuk",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'Poppins',
+                            ),
                           ),
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(41))),
                         ),
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(41))),
                       )),
                   SizedBox(
                     height: 10,
@@ -299,5 +321,22 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  void _singnIn() async {
+    // ignore: unused_local_variable
+    String email = _emailController.text;
+    // ignore: unused_local_variable
+    String password = _passwordController.text;
+
+    // ignore: unused_local_variable
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("user is succes signIn");
+      Navigator.pushNamed(context, "/main_bottom");
+    } else {
+      print("some eror happen");
+    }
   }
 }
