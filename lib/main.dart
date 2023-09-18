@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:fitlife/Home.dart';
 import 'package:fitlife/Journal.dart';
 import 'package:fitlife/Journal_1.dart';
@@ -5,11 +6,18 @@ import 'package:fitlife/Login.dart';
 import 'package:fitlife/Meditasi.dart';
 import 'package:fitlife/Profile.dart';
 import 'package:fitlife/Register.dart';
-import 'package:fitlife/main/main_bottom.dart';
+import 'package:fitlife/buttom/main_bottom.dart';
 import 'package:fitlife/splash_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: "AIzaSyBK6qu2arrw1CPnbOZO4jg3HurTPJlPeHA",
+          appId: "1:271161443317:android:182ea24abcb04e100456bc",
+          messagingSenderId: "271161443317",
+          projectId: "login-register-fitlife-1b476"));
   runApp(MyApp());
 }
 

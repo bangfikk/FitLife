@@ -73,13 +73,13 @@ class Journal_1 extends StatelessWidget {
                     Text.rich(TextSpan(
                         text: 'Kesehatan Mental : Pentingnya Merawat Diri',
                         style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold)))
+                            fontSize: 25, fontWeight: FontWeight.bold)))
                   ],
                 ),
               ),
               Container(
                 height: 235,
-                width: 340,
+                width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/image.png'))),

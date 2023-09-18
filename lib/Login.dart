@@ -121,9 +121,9 @@ class _LoginState extends State<Login> {
                       height: 58,
                       width: 342,
                       child: GestureDetector(
-                        onTap: _singnIn,
+                        onTap: _signIn,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: _signIn,
                           child: Text(
                             "Masuk",
                             style: TextStyle(
@@ -323,20 +323,30 @@ class _LoginState extends State<Login> {
     );
   }
 
-  void _singnIn() async {
-    // ignore: unused_local_variable
+  void _signIn() async {
     String email = _emailController.text;
-    // ignore: unused_local_variable
     String password = _passwordController.text;
 
-    // ignore: unused_local_variable
-    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-    if (user != null) {
-      print("user is succes signIn");
-      Navigator.pushNamed(context, "/main_bottom");
-    } else {
-      print("some eror happen");
+      // Check if the sign-in was successful
+      User? user = userCredential.user;
+
+      if (user != null) {
+        print("User sign-in successful");
+        Navigator.pushNamed(context,
+            "/main_bottom"); // Navigate to the main screen after successful sign-in
+      } else {
+        print("Some error occurred during sign-in");
+      }
+    } catch (e) {
+      print("Error during sign-in: $e");
+      // Handle and display the error to the user, if needed
     }
   }
 }

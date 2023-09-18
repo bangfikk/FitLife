@@ -177,7 +177,7 @@ class _RegisterState extends State<Register> {
                       child: GestureDetector(
                         onTap: _signUp,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: _signUp,
                           child: Text(
                             "Daftar",
                             style: TextStyle(
@@ -378,20 +378,29 @@ class _RegisterState extends State<Register> {
   }
 
   void _signUp() async {
-    // ignore: unused_local_variable
     String username = _usernameController.text;
-
     String email = _emailController.text;
-
     String password = _passwordController.text;
 
-    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    try {
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
 
-    if (user != null) {
-      print("user is succes");
-      Navigator.pushNamed(context, "/main_bottom");
-    } else {
-      print("some eror happen");
+      // The user is successfully registered
+      User? user = userCredential.user;
+      if (user != null) {
+        print("User registration successful");
+        Navigator.pushNamed(context,
+            "/main_bottom"); // Navigate to the main screen after successful registration
+      } else {
+        print("Some error occurred during registration");
+      }
+    } catch (e) {
+      print("Error during registration: $e");
+      // Handle and display the error to the user, if needed
     }
   }
 }

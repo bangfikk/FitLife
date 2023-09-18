@@ -35,7 +35,7 @@ class _MainBottomState extends State<MainBottom> {
             label: 'Beranda',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.note),
+            icon: Icon(Icons.notes_outlined),
             label: 'Journal',
           ),
           BottomNavigationBarItem(

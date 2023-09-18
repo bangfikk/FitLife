@@ -334,32 +334,50 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: DecorationImage(
-                              image: AssetImage(''),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: DecorationImage(
+                                image: AssetImage(''),
+                              ),
                             ),
-                          ),
-                          child: Container(
-                            padding: EdgeInsets.symmetric(vertical: 15),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Hidup Dengan Duka',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                )
-                              ],
-                            ),
-                          )),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(vertical: 15),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    'Hidup Dengan Duka',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ),
                       SizedBox(
                         width: 12,
                       ),
@@ -848,7 +866,6 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-      
       ),
     );
   }
