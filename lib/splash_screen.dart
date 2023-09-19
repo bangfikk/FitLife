@@ -15,7 +15,7 @@ class SplaschScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
+                const SizedBox(
                   height: 259,
                   width: 250,
                   child: Image(
@@ -23,7 +23,7 @@ class SplaschScreen extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 185,
                 ),
                 SizedBox(
@@ -33,29 +33,29 @@ class SplaschScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.pushNamed(context, '/register');
                       },
-                      child: Text(
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(41))),
+                      child: const Text(
                         "Daftar",
                         style: TextStyle(
                             fontSize: 20,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w500),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(41))),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Sudah Punya Akun?"),
+                    const Text("Sudah Punya Akun?"),
                     InkWell(
                       onTap: () {
                         Navigator.pushNamed(context, '/login');
                       },
-                      child: Text(
+                      child: const Text(
                         " MASUK",
                         style: TextStyle(color: Color(0XFF0074FF)),
                       ),

@@ -13,15 +13,17 @@ import 'package:flutter/material.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: FirebaseOptions(
+      options: const FirebaseOptions(
           apiKey: "AIzaSyBK6qu2arrw1CPnbOZO4jg3HurTPJlPeHA",
           appId: "1:271161443317:android:182ea24abcb04e100456bc",
           messagingSenderId: "271161443317",
           projectId: "login-register-fitlife-1b476"));
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,15 +32,15 @@ class MyApp extends StatelessWidget {
       title: 'FitLife',
       initialRoute: '/splashscreen',
       routes: {
-        '/splashscreen': (context) => SplaschScreen(),
-        '/login': (context) => Login(),
-        '/register': (context) => Register(),
-        '/home': (context) => Home(),
-        '/journal': (context) => Journal(),
-        '/meditasi': (context) => Meditasi(),
-        '/profile': (context) => Profile(),
-        '/journal_1': (context) => Journal_1(),
-        '/main_bottom': (context) => MainBottom()
+        '/splashscreen': (context) => const SplaschScreen(),
+        '/login': (context) => const Login(),
+        '/register': (context) => const Register(),
+        '/home': (context) => const Home(),
+        '/journal': (context) => const Journal(),
+        '/meditasi': (context) => const Meditasi(),
+        '/profile': (context) => const Profile(),
+        '/journal_1': (context) => const JournalSatu(),
+        '/main_bottom': (context) => const MainBottom()
       },
     );
   }

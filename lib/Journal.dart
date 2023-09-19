@@ -19,7 +19,7 @@ class _JournalState extends State<Journal> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 3,
-                decoration: ShapeDecoration(
+                decoration: const ShapeDecoration(
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
                     end: Alignment(0, 1),
@@ -33,11 +33,11 @@ class _JournalState extends State<Journal> {
                   ),
                 ),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -51,10 +51,10 @@ class _JournalState extends State<Journal> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 24,
                       ),
-                      Container(
+                      SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
@@ -62,7 +62,7 @@ class _JournalState extends State<Journal> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Container(
+                                SizedBox(
                                   width: 270,
                                   height: 50,
                                   child: TextField(
@@ -74,16 +74,16 @@ class _JournalState extends State<Journal> {
                                                 BorderRadius.circular(15),
                                             borderSide: BorderSide.none),
                                         hintText: "Serch",
-                                        prefixIcon: Icon(Icons.search)),
+                                        prefixIcon: const Icon(Icons.search)),
                                   ),
                                 ),
                                 Container(
                                   width: 50,
                                   height: 50,
                                   decoration: ShapeDecoration(
-                                    color: Color(0xFF003FE9),
+                                    color: const Color(0xFF003FE9),
                                     shape: RoundedRectangleBorder(
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           width: 0.50, color: Colors.white),
                                       borderRadius: BorderRadius.circular(15),
                                     ),
@@ -94,7 +94,7 @@ class _JournalState extends State<Journal> {
                                       Container(
                                         width: 30,
                                         height: 30,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                             image: DecorationImage(
                                                 image: AssetImage(
                                                     'assets/images/pengingat.png'),
@@ -113,7 +113,7 @@ class _JournalState extends State<Journal> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: Column(
                   children: [
                     Row(
@@ -123,82 +123,80 @@ class _JournalState extends State<Journal> {
                             width: MediaQuery.of(context).size.width / 2.5,
                             height: 210,
                             decoration: ShapeDecoration(
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/metalhealt.png'),
                                     fit: BoxFit.cover),
                                 shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         width: 1, color: Color(0xFFE5E7EB)),
                                     borderRadius: BorderRadius.circular(24))),
-                            child: Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width: 155.2,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(22),
-                                              bottomRight: Radius.circular(22)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 155.2,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(22),
+                                            bottomRight: Radius.circular(22)),
+                                      ),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(7),
+                                        child: const Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text.rich(TextSpan(children: [
+                                                  TextSpan(
+                                                      text: '5-10 Menit\n',
+                                                      style: TextStyle(
+                                                          color: Color(
+                                                              0xFF757575),
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 8,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Kesehatan Mental:\n',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 9,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Pentingnya Merawat Diri',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 9,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                ]))
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        child: Container(
-                                          padding: EdgeInsets.all(7),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text.rich(TextSpan(children: [
-                                                    TextSpan(
-                                                        text: '5-10 Menit\n',
-                                                        style: TextStyle(
-                                                            color: Color(
-                                                                0xFF757575),
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 8,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Kesehatan Mental:\n',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Pentingnya Merawat Diri',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                  ]))
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
                             ),
                           ),
                           Container(
@@ -206,82 +204,80 @@ class _JournalState extends State<Journal> {
                             height: 210,
                             decoration: ShapeDecoration(
                                 color: Colors.grey,
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/kecanduangame.png'),
                                     fit: BoxFit.cover),
                                 shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         width: 1, color: Color(0xFFE5E7EB)),
                                     borderRadius: BorderRadius.circular(24))),
-                            child: Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width: 155.2,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(22),
-                                              bottomRight: Radius.circular(22)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 155.2,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(22),
+                                            bottomRight: Radius.circular(22)),
+                                      ),
+                                      child: Container(
+                                        padding: const EdgeInsets.all(7),
+                                        child: const Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text.rich(TextSpan(children: [
+                                                  TextSpan(
+                                                      text: '5-10 Menit\n',
+                                                      style: TextStyle(
+                                                          color: Color(
+                                                              0xFF757575),
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 8,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Kesehatan Mental:\n',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 9,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Pentingnya Merawat Diri',
+                                                      style: TextStyle(
+                                                          fontFamily:
+                                                              'Poppins',
+                                                          fontSize: 9,
+                                                          fontWeight:
+                                                              FontWeight
+                                                                  .bold)),
+                                                ]))
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        child: Container(
-                                          padding: EdgeInsets.all(7),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text.rich(TextSpan(children: [
-                                                    TextSpan(
-                                                        text: '5-10 Menit\n',
-                                                        style: TextStyle(
-                                                            color: Color(
-                                                                0xFF757575),
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 8,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Kesehatan Mental:\n',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Pentingnya Merawat Diri',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                  ]))
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  )
-                                ],
-                              ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
                             ),
                           ),
                         ])

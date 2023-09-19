@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitlife/firebase_auth_implementation/firebase_auth_services.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,9 +14,10 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final FirebaseAuthService _auth = FirebaseAuthService();
 
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  
   @override
   void dispose() {
     _usernameController.dispose();
@@ -37,11 +39,11 @@ class _RegisterState extends State<Register> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              icon: Icon(Icons.arrow_back_ios, color: Colors.black)),
+              icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
           elevation: 0,
           backgroundColor: Colors.transparent,
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "Daftar",
             style: TextStyle(
                 color: Colors.black,
@@ -56,40 +58,40 @@ class _RegisterState extends State<Register> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   TextFormField(
                     controller: _usernameController,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person_2_outlined),
+                        prefixIcon: const Icon(Icons.person_2_outlined),
                         hintText: 'Nama',
-                        hintStyle: TextStyle(fontFamily: 'Poppins'),
+                        hintStyle: const TextStyle(fontFamily: 'Poppins'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.email_outlined),
+                        prefixIcon: const Icon(Icons.email_outlined),
                         hintText: 'Alamat Email',
-                        hintStyle: TextStyle(fontFamily: 'Poppins'),
+                        hintStyle: const TextStyle(fontFamily: 'Poppins'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   TextField(
                     controller: _passwordController,
                     obscureText: !visibiltypass,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock_outlined),
+                        prefixIcon: const Icon(Icons.lock_outlined),
                         hintText: 'Kata Sandi',
-                        hintStyle: TextStyle(fontFamily: 'Poppins'),
+                        hintStyle: const TextStyle(fontFamily: 'Poppins'),
                         suffixIcon: IconButton(
                             onPressed: () {
                               setState(() {
@@ -97,12 +99,12 @@ class _RegisterState extends State<Register> {
                               });
                             },
                             icon: visibiltypass
-                                ? Icon(Icons.visibility)
-                                : Icon(Icons.visibility_off)),
+                                ? const Icon(Icons.visibility)
+                                : const Icon(Icons.visibility_off)),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(24))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Row(
@@ -110,11 +112,11 @@ class _RegisterState extends State<Register> {
                     children: [
                       Checkbox(
                         shape: RoundedRectangleBorder(
-                            side: BorderSide(
+                            side: const BorderSide(
                                 width: 0.75, color: Color(0xFFD3D6DA)),
                             borderRadius: BorderRadius.circular(5)),
                         value: isChechked,
-                        activeColor: Color(0XFF0074FF),
+                        activeColor: const Color(0XFF0074FF),
                         tristate: false,
                         onChanged: (newvool) {
                           setState(() {
@@ -122,7 +124,7 @@ class _RegisterState extends State<Register> {
                           });
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         child: Text.rich(
                           TextSpan(
                             children: [
@@ -168,7 +170,7 @@ class _RegisterState extends State<Register> {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   SizedBox(
@@ -178,25 +180,25 @@ class _RegisterState extends State<Register> {
                         onTap: _signUp,
                         child: ElevatedButton(
                           onPressed: _signUp,
-                          child: Text(
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(41))),
+                          child: const Text(
                             "Daftar",
                             style: TextStyle(
                                 fontSize: 20,
                                 fontFamily: 'Poppins',
                                 fontWeight: FontWeight.w500),
                           ),
-                          style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(41))),
                         ),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Sudah Punya Akun?",
+                      const Text("Sudah Punya Akun?",
                           style: TextStyle(
                             fontFamily: 'Poppins',
                           )),
@@ -204,7 +206,7 @@ class _RegisterState extends State<Register> {
                         onTap: () {
                           Navigator.pushNamed(context, '/login');
                         },
-                        child: Text(
+                        child: const Text(
                           " MASUK",
                           style: TextStyle(
                               color: Color(0XFF0074FF), fontFamily: 'Poppins'),
@@ -212,7 +214,7 @@ class _RegisterState extends State<Register> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Text(
@@ -226,10 +228,10 @@ class _RegisterState extends State<Register> {
                       height: 1.50,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
-                  Container(
+                  SizedBox(
                     width: 280,
                     height: 70,
                     child: Stack(
@@ -237,7 +239,7 @@ class _RegisterState extends State<Register> {
                         Positioned(
                           left: 0,
                           top: 0,
-                          child: Container(
+                          child: SizedBox(
                             width: 70,
                             height: 70,
                             child: Stack(
@@ -267,7 +269,7 @@ class _RegisterState extends State<Register> {
                                     width: 35,
                                     height: 35,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 'assets/images/google.png'))),
@@ -280,7 +282,7 @@ class _RegisterState extends State<Register> {
                         Positioned(
                           left: 210,
                           top: 0,
-                          child: Container(
+                          child: SizedBox(
                             width: 70,
                             height: 70,
                             child: Stack(
@@ -310,7 +312,7 @@ class _RegisterState extends State<Register> {
                                     width: 45,
                                     height: 45,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                         image: DecorationImage(
                                             image: AssetImage(
                                                 'assets/images/fb.png'))),
@@ -323,7 +325,7 @@ class _RegisterState extends State<Register> {
                         Positioned(
                           left: 105,
                           top: 0,
-                          child: Container(
+                          child: SizedBox(
                             width: 70,
                             height: 70,
                             child: Stack(
@@ -352,7 +354,7 @@ class _RegisterState extends State<Register> {
                                   child: Container(
                                     width: 54,
                                     height: 54,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       image: DecorationImage(
                                         image:
                                             AssetImage('assets/images/wa.png'),
@@ -392,14 +394,21 @@ class _RegisterState extends State<Register> {
       // The user is successfully registered
       User? user = userCredential.user;
       if (user != null) {
-        print("User registration successful");
+        if (kDebugMode) {
+          print("User registration successful");
+        }
+        // ignore: use_build_context_synchronously
         Navigator.pushNamed(context,
             "/main_bottom"); // Navigate to the main screen after successful registration
       } else {
-        print("Some error occurred during registration");
+        if (kDebugMode) {
+          print("Some error occurred during registration");
+        }
       }
     } catch (e) {
-      print("Error during registration: $e");
+      if (kDebugMode) {
+        print("Error during registration: $e");
+      }
       // Handle and display the error to the user, if needed
     }
   }

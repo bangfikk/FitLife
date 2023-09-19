@@ -19,7 +19,7 @@ class _MeditasiState extends State<Meditasi> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 3,
-              decoration: ShapeDecoration(
+              decoration: const ShapeDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(0.00, -1.00),
                   end: Alignment(0, 1),
@@ -33,11 +33,12 @@ class _MeditasiState extends State<Meditasi> {
                 ),
               ),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -51,10 +52,10 @@ class _MeditasiState extends State<Meditasi> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
-                    Container(
+                    SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -62,7 +63,7 @@ class _MeditasiState extends State<Meditasi> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
+                              SizedBox(
                                 width: 250,
                                 height: 50,
                                 child: TextField(
@@ -74,16 +75,16 @@ class _MeditasiState extends State<Meditasi> {
                                               BorderRadius.circular(15),
                                           borderSide: BorderSide.none),
                                       hintText: "Serch",
-                                      prefixIcon: Icon(Icons.search)),
+                                      prefixIcon: const Icon(Icons.search)),
                                 ),
                               ),
                               Container(
                                 width: 50,
                                 height: 50,
                                 decoration: ShapeDecoration(
-                                  color: Color(0xFF003FE9),
+                                  color: const Color(0xFF003FE9),
                                   shape: RoundedRectangleBorder(
-                                    side: BorderSide(
+                                    side: const BorderSide(
                                         width: 0.50, color: Colors.white),
                                     borderRadius: BorderRadius.circular(15),
                                   ),
@@ -94,7 +95,7 @@ class _MeditasiState extends State<Meditasi> {
                                     Container(
                                       width: 30,
                                       height: 30,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           image: DecorationImage(
                                               image: AssetImage(
                                                   'assets/images/pengingat.png'),
@@ -113,7 +114,7 @@ class _MeditasiState extends State<Meditasi> {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
               child: Column(
                 children: [
                   Row(
@@ -123,15 +124,15 @@ class _MeditasiState extends State<Meditasi> {
                           width: 155,
                           height: 220,
                           decoration: ShapeDecoration(
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage('assets/images/basic.png'),
                                   fit: BoxFit.cover),
                               shape: RoundedRectangleBorder(
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
                                   borderRadius: BorderRadius.circular(12))),
                           child: Container(
-                            padding: EdgeInsetsDirectional.all(12),
+                            padding: const EdgeInsetsDirectional.all(12),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -146,7 +147,7 @@ class _MeditasiState extends State<Meditasi> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10))),
-                                      child: Row(
+                                      child: const Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
@@ -170,16 +171,16 @@ class _MeditasiState extends State<Meditasi> {
                           width: 155,
                           height: 220,
                           decoration: ShapeDecoration(
-                              image: DecorationImage(
+                              image: const DecorationImage(
                                   image: AssetImage(
                                       'assets/images/metalhealt.png'),
                                   fit: BoxFit.cover),
                               shape: RoundedRectangleBorder(
-                                  side: BorderSide(
+                                  side: const BorderSide(
                                       width: 1, color: Color(0xFFE5E7EB)),
                                   borderRadius: BorderRadius.circular(12))),
                           child: Container(
-                            padding: EdgeInsetsDirectional.all(12),
+                            padding: const EdgeInsetsDirectional.all(12),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
@@ -194,7 +195,7 @@ class _MeditasiState extends State<Meditasi> {
                                           shape: RoundedRectangleBorder(
                                               borderRadius:
                                                   BorderRadius.circular(10))),
-                                      child: Row(
+                                      child: const Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
@@ -215,7 +216,7 @@ class _MeditasiState extends State<Meditasi> {
                           ),
                         ),
                       ]),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
@@ -223,30 +224,28 @@ class _MeditasiState extends State<Meditasi> {
                     height: 82,
                     decoration: ShapeDecoration(
                         color: Colors.black,
-                        image: DecorationImage(
+                        image: const DecorationImage(
                             image: AssetImage(''), fit: BoxFit.fill),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Semua Meditasi',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Semua Meditasi',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 20),
                     child: Column(
                       children: [
                         Row(
@@ -256,62 +255,59 @@ class _MeditasiState extends State<Meditasi> {
                               width: 150,
                               height: 210,
                               decoration: ShapeDecoration(
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                       image: AssetImage(
                                           'assets/images/kecanduangame.png'),
                                       fit: BoxFit.fill),
                                   shape: RoundedRectangleBorder(
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           width: 1, color: Color(0xFFE5E7EB)),
                                       borderRadius: BorderRadius.circular(24))),
-                              child: Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          height: 57,
-                                          width: 148,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.only(
-                                                bottomLeft: Radius.circular(22),
-                                                bottomRight:
-                                                    Radius.circular(22)),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 57,
+                                        width: 148,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(22),
+                                              bottomRight: Radius.circular(22)),
+                                        ),
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 10),
+                                          child: const Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            children: [
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '5-10 MIN',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 10,
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  )
+                                                ],
+                                              ),
+                                            ],
                                           ),
-                                          child: Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 10),
-                                            child: Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.start,
-                                                  children: [
-                                                    Text(
-                                                      '5-10 MIN',
-                                                      style: TextStyle(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 10,
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    )
-                                                  ],
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 12,
                             ),
                             Container(
@@ -319,33 +315,30 @@ class _MeditasiState extends State<Meditasi> {
                               height: 210,
                               decoration: ShapeDecoration(
                                   color: Colors.cyan,
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                       image: AssetImage(''), fit: BoxFit.fill),
                                   shape: RoundedRectangleBorder(
-                                      side: BorderSide(
+                                      side: const BorderSide(
                                           width: 1, color: Color(0xFFE5E7EB)),
                                       borderRadius: BorderRadius.circular(24))),
-                              child: Container(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Container(
-                                          height: 57,
-                                          width: 148,
-                                          decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius: BorderRadius.only(
-                                                bottomLeft: Radius.circular(22),
-                                                bottomRight:
-                                                    Radius.circular(22)),
-                                          ),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 57,
+                                        width: 148,
+                                        decoration: const BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(22),
+                                              bottomRight: Radius.circular(22)),
+                                        ),
+                                      )
+                                    ],
+                                  )
+                                ],
                               ),
                             )
                           ],

@@ -13,7 +13,7 @@ class MainBottom extends StatefulWidget {
 
 class _MainBottomState extends State<MainBottom> {
   int pageIndex = 0;
-  List<Widget> pageList = <Widget>[Home(), Journal(), Meditasi(), Profile()];
+  List<Widget> pageList = <Widget>[const Home(), const Journal(), const Meditasi(), const Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _MainBottomState extends State<MainBottom> {
             pageIndex = value;
           });
         },
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Beranda',
