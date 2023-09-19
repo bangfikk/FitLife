@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -15,6 +17,51 @@ class _ProfileState extends State<Profile> {
   DateTime? _selectedDay;
   @override
   Widget build(BuildContext context) {
+    // Function to log out from Firebase Auth
+    void _logOut() async {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Konfirmasi Logout"),
+            content: const Text("Apakah Anda yakin ingin keluar?"),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("Batal"),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+              ),
+              TextButton(
+                child: const Text(
+                  "Logout",
+                  style: TextStyle(color: Colors.red),
+                ),
+                onPressed: () async {
+                  try {
+                    await FirebaseAuth.instance.signOut();
+                    if (kDebugMode) {
+                      print("User logged out successfully");
+                    }
+
+                    // Navigate to the login screen
+                    // ignore: use_build_context_synchronously
+                    Navigator.of(context).pushReplacementNamed(
+                        '/login'); // Replace '/login' with your actual login route
+                  } catch (e) {
+                    if (kDebugMode) {
+                      print("Error logging out: $e");
+                    }
+                    // Handle any errors that occur during the logout process
+                  }
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
@@ -50,13 +97,18 @@ class _ProfileState extends State<Profile> {
                         ],
                       ),
                     ),
-                    Container(
-                      width: 40,
-                      height: 40,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/settings.png'),
-                              fit: BoxFit.fill)),
+                    InkWell(
+                      onTap: () {
+                        _logOut();
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/settings.png'),
+                                fit: BoxFit.fill)),
+                      ),
                     )
                   ],
                 ),

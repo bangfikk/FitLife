@@ -35,24 +35,24 @@ class _LoginState extends State<Login> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          title: const Text(
-            "Masuk",
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        // appBar: AppBar(
+        // leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+        //   elevation: 0,
+        //   backgroundColor: Colors.transparent,
+        //   centerTitle: true,
+        //   title: const Text(
+        //     "Masuk",
+        //     style: TextStyle(
+        //       color: Colors.black,
+        //       fontFamily: 'Poppins',
+        //       fontWeight: FontWeight.bold,
+        //     ),
+        //   ),
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -327,15 +327,57 @@ class _LoginState extends State<Login> {
   }
 
   void _signIn() async {
-    String email = _emailController.text;
-    String password = _passwordController.text;
+    String email = _emailController.text.trim();
+    String password = _passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      // Show a dialog to inform the user to fill in all fields.
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Harap Isi Semua Kolom"),
+            content: const Text("Silakan isi semua kolom sebelum melanjutkan."),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+              ),
+            ],
+          );
+        },
+      );
+      return; // Exit the function early if fields are not filled
+    }
+
+    if (!isValidEmail(email)) {
+      // Show a dialog to inform the user about the invalid email format.
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Format Email Salah"),
+            content: const Text(
+                "Format email tidak valid. Harap masukkan email yang valid."),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+              ),
+            ],
+          );
+        },
+      );
+      return; // Exit the function early if email format is invalid
+    }
 
     try {
-      UserCredential userCredential =
-          await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
 
       // Check if the sign-in was successful
       User? user = userCredential.user;
@@ -356,7 +398,49 @@ class _LoginState extends State<Login> {
       if (kDebugMode) {
         print("Error during sign-in: $e");
       }
+
       // Handle and display the error to the user, if needed
+      String errorMessage =
+          "Terjadi kesalahan saat masuk. Periksa kembali email dan kata sandi Anda.";
+
+      if (e is FirebaseAuthException) {
+        switch (e.code) {
+          case 'user-not-found':
+            errorMessage =
+                "Email tidak ditemukan. Harap daftar terlebih dahulu.";
+            break;
+          case 'wrong-password':
+            errorMessage = "Kata sandi salah. Harap coba lagi.";
+            break;
+          // Handle other Firebase authentication error codes as needed
+        }
+      }
+
+      // Show a dialog with the error message
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Gagal Masuk"),
+            content: Text(errorMessage),
+            actions: <Widget>[
+              TextButton(
+                child: const Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+              ),
+            ],
+          );
+        },
+      );
     }
+  }
+
+  bool isValidEmail(String email) {
+    // Use a regular expression to validate the email format
+    String emailPattern = r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$';
+    RegExp regex = RegExp(emailPattern);
+    return regex.hasMatch(email);
   }
 }

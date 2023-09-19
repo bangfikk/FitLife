@@ -36,23 +36,23 @@ class _RegisterState extends State<Register> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
-          elevation: 0,
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          title: const Text(
-            "Daftar",
-            style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.bold),
-          ),
-        ),
+        // appBar: AppBar(
+        // leading: IconButton(
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     },
+        //     icon: const Icon(Icons.arrow_back_ios, color: Colors.black)),
+        //   elevation: 0,
+        //   backgroundColor: Colors.transparent,
+        //   centerTitle: true,
+        //   title: const Text(
+        //     "Daftar",
+        //     style: TextStyle(
+        //         color: Colors.black,
+        //         fontFamily: 'Poppins',
+        //         fontWeight: FontWeight.bold),
+        //   ),
+        // ),
         body: Center(
           child: SingleChildScrollView(
             child: Padding(
@@ -126,8 +126,10 @@ class _RegisterState extends State<Register> {
                           });
                         },
                       ),
-                      const SizedBox(
-                        child: Text.rich(
+                      Container(
+                        constraints: const BoxConstraints(
+                            maxWidth: 280), // Adjust the maxWidth as needed
+                        child: const Text.rich(
                           TextSpan(
                             children: [
                               TextSpan(
@@ -158,7 +160,7 @@ class _RegisterState extends State<Register> {
                                 ),
                               ),
                               TextSpan(
-                                text: '\nPrivacy Policy',
+                                text: 'Privacy Policy',
                                 style: TextStyle(
                                   color: Color(0xFF0047FF),
                                   fontFamily: 'Poppins',
@@ -168,6 +170,9 @@ class _RegisterState extends State<Register> {
                               ),
                             ],
                           ),
+                          maxLines: 2, // Adjust the number of lines as needed
+                          overflow: TextOverflow
+                              .ellipsis, // Specify how to handle overflow
                         ),
                       )
                     ],
@@ -382,37 +387,155 @@ class _RegisterState extends State<Register> {
   }
 
   void _signUp() async {
-    // ignore: unused_local_variable
     String username = _usernameController.text;
     String email = _emailController.text;
     String password = _passwordController.text;
 
-    try {
-      UserCredential userCredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-
-      // The user is successfully registered
-      User? user = userCredential.user;
-      if (user != null) {
-        if (kDebugMode) {
-          print("User registration successful");
-        }
-        // ignore: use_build_context_synchronously
-        Navigator.pushNamed(context,
-            "/main_bottom"); // Navigate to the main screen after successful registration
-      } else {
-        if (kDebugMode) {
-          print("Some error occurred during registration");
-        }
-      }
-    } catch (e) {
-      if (kDebugMode) {
-        print("Error during registration: $e");
-      }
-      // Handle and display the error to the user, if needed
+    // Check if any of the fields is empty
+    if (username.isEmpty || email.isEmpty || password.isEmpty) {
+      // Show a dialog to inform the user to fill in all fields.
+      _showFillAllFieldsDialog();
+      return; // Return early, don't proceed with registration
     }
+
+    // Validate the email format using a regular expression
+    if (!_isValidEmail(email)) {
+      // Show a dialog to inform the user of the invalid email format
+      _showInvalidEmailDialog();
+      return; // Return early, don't proceed with registration
+    }
+
+    // Check if the password has at least 6 characters
+    if (password.length < 6) {
+      // Show a dialog to inform the user to use a longer password
+      _showShortPasswordDialog();
+      return; // Return early, don't proceed with registration
+    }
+
+    if (isChechked == true) {
+      try {
+        UserCredential userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+
+        // The user is successfully registered
+        User? user = userCredential.user;
+        if (user != null) {
+          if (kDebugMode) {
+            print("User registration successful");
+          }
+          // ignore: use_build_context_synchronously
+          Navigator.pushNamed(context,
+              "/main_bottom"); // Navigate to the main screen after successful registration
+        } else {
+          if (kDebugMode) {
+            print("Some error occurred during registration");
+          }
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print("Error during registration: $e");
+        }
+        // Handle and display the error to the user, if needed
+      }
+    } else {
+      // Show a dialog to inform the user to accept the terms and conditions.
+      _showTermsAndConditionsDialog();
+    }
+  }
+
+  void _showShortPasswordDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Perhatian!"),
+          content:
+              const Text("Kata sandi harus terdiri dari minimal 6 karakter."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  bool _isValidEmail(String email) {
+    // Define a regular expression pattern for validating email addresses
+    final emailRegex = RegExp(
+      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+    );
+
+    // Use the regex pattern to match the email
+    return emailRegex.hasMatch(email);
+  }
+
+  void _showInvalidEmailDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Perhatian!"),
+          content: const Text(
+              "Format email tidak valid. Harap masukkan email yang valid."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showFillAllFieldsDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Perhatian!"),
+          content: const Text("Harap isi semua kolom."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _showTermsAndConditionsDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Terms and Conditions"),
+          content: const Text(
+              "Anda harus menceklis syarat dan ketentuan untuk mendaftar."),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: Text("OK"),
+            ),
+          ],
+        );
+      },
+    );
   }
 }

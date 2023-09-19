@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
       title: 'FitLife',
-      initialRoute: '/main_bottom',
+      initialRoute: '/login',
       routes: {
         '/splashscreen': (context) => const SplaschScreen(),
         '/login': (context) => const Login(),
