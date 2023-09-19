@@ -3,7 +3,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitlife/firebase_auth_implementation/firebase_auth_services.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {

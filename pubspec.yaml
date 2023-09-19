@@ -41,6 +41,9 @@ dependencies:
   firebase_storage: ^11.2.6
   cloud_firestore: ^4.9.1
   uicons: ^1.0.1
+  table_calendar: ^3.0.9
+  flutter_html: ^2.2.1
+  
  
   
 

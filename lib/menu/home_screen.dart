@@ -117,18 +117,33 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         height: 20,
                       ),
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              InkWell(
-                                onTap: () {},
-                                child: Column(
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Column(
                                   children: [
                                     Container(
-                                      width: 60,
-                                      height: 60,
+                                      width: 55,
+                                      height: 55,
                                       decoration: ShapeDecoration(
                                           color: const Color(0xFF0B43D8),
                                           shape: RoundedRectangleBorder(
@@ -142,12 +157,12 @@ class _HomeState extends State<Home> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Container(
-                                            width: 40,
-                                            height: 40,
+                                            width: 35,
+                                            height: 35,
                                             decoration: const BoxDecoration(
                                               image: DecorationImage(
                                                   image: AssetImage(
-                                                      'assets/images/1.png'),
+                                                      'assets/images/icon_bahagia.png'),
                                                   fit: BoxFit.fill),
                                             ),
                                           ),
@@ -164,136 +179,136 @@ class _HomeState extends State<Home> {
                                     )
                                   ],
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 27,
-                              ),
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: ShapeDecoration(
-                                        color: const Color(0xFF0B43D8),
-                                        shape: RoundedRectangleBorder(
-                                            side: const BorderSide(
-                                                width: 0.50,
-                                                color: Colors.white),
-                                            borderRadius:
-                                                BorderRadius.circular(14))),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: const BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/images/2.png'),
-                                                  fit: BoxFit.fill)),
-                                        ),
-                                      ],
+                                const SizedBox(
+                                  width: 27,
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 55,
+                                      height: 55,
+                                      decoration: ShapeDecoration(
+                                          color: const Color(0xFF0B43D8),
+                                          shape: RoundedRectangleBorder(
+                                              side: const BorderSide(
+                                                  width: 0.50,
+                                                  color: Colors.white),
+                                              borderRadius:
+                                                  BorderRadius.circular(14))),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            width: 35,
+                                            height: 35,
+                                            decoration: const BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'assets/images/icon_normal.png'),
+                                                    fit: BoxFit.fill)),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                    'Normal',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.white),
-                                  )
-                                ],
-                              ),
-                              const SizedBox(
-                                width: 27,
-                              ),
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: ShapeDecoration(
-                                        color: const Color(0xFF0B43D8),
-                                        shape: RoundedRectangleBorder(
-                                            side: const BorderSide(
-                                                width: 0.50,
-                                                color: Colors.white),
-                                            borderRadius:
-                                                BorderRadius.circular(14))),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: const BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/images/3.png'),
-                                                  fit: BoxFit.fill)),
-                                        ),
-                                      ],
+                                    const SizedBox(
+                                      height: 5,
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                    'Sedih',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.white),
-                                  )
-                                ],
-                              ),
-                              const SizedBox(
-                                width: 27,
-                              ),
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 60,
-                                    height: 60,
-                                    decoration: ShapeDecoration(
-                                        color: const Color(0xFF0B43D8),
-                                        shape: RoundedRectangleBorder(
-                                            side: const BorderSide(
-                                                width: 0.50,
-                                                color: Colors.white),
-                                            borderRadius:
-                                                BorderRadius.circular(14))),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Container(
-                                          width: 40,
-                                          height: 40,
-                                          decoration: const BoxDecoration(
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/images/4.png'),
-                                                  fit: BoxFit.fill)),
-                                        ),
-                                      ],
+                                    const Text(
+                                      'Normal',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(
+                                  width: 27,
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 55,
+                                      height: 55,
+                                      decoration: ShapeDecoration(
+                                          color: const Color(0xFF0B43D8),
+                                          shape: RoundedRectangleBorder(
+                                              side: const BorderSide(
+                                                  width: 0.50,
+                                                  color: Colors.white),
+                                              borderRadius:
+                                                  BorderRadius.circular(14))),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            width: 35,
+                                            height: 35,
+                                            decoration: const BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'assets/images/icon_sedih.png'),
+                                                    fit: BoxFit.fill)),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 5,
-                                  ),
-                                  const Text(
-                                    'Marah',
-                                    style: TextStyle(
-                                        fontSize: 15, color: Colors.white),
-                                  )
-                                ],
-                              )
-                            ],
-                          )
-                        ],
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    const Text(
+                                      'Sedih',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.white),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(
+                                  width: 27,
+                                ),
+                                Column(
+                                  children: [
+                                    Container(
+                                      width: 55,
+                                      height: 55,
+                                      decoration: ShapeDecoration(
+                                          color: const Color(0xFF0B43D8),
+                                          shape: RoundedRectangleBorder(
+                                              side: const BorderSide(
+                                                  width: 0.50,
+                                                  color: Colors.white),
+                                              borderRadius:
+                                                  BorderRadius.circular(14))),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Container(
+                                            width: 35,
+                                            height: 35,
+                                            decoration: const BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'assets/images/icon_marah.png'),
+                                                    fit: BoxFit.fill)),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 5,
+                                    ),
+                                    const Text(
+                                      'Marah',
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.white),
+                                    )
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 5,
@@ -356,8 +371,8 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(24),
                               color: const Color.fromARGB(255, 146, 146, 146),
                               image: const DecorationImage(
-                                image: AssetImage(''),
-                              ),
+                                  image: AssetImage('assets/images/1.png'),
+                                  fit: BoxFit.cover),
                             ),
                             child: Container(
                               padding: const EdgeInsets.symmetric(vertical: 15),
@@ -365,7 +380,7 @@ class _HomeState extends State<Home> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   Text(
-                                    'Hidup Dengan Duka',
+                                    '',
                                     style: TextStyle(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
@@ -379,119 +394,191 @@ class _HomeState extends State<Home> {
                       const SizedBox(
                         width: 12,
                       ),
-                      Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: const DecorationImage(
-                              image: AssetImage(''),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/2.png'),
+                                  fit: BoxFit.cover),
                             ),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Hidup Dengan Duka',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                )
-                              ],
-                            ),
-                          )),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    '',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ),
                       const SizedBox(
                         width: 12,
                       ),
-                      Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: const DecorationImage(
-                              image: AssetImage(''),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/3.png'),
+                                  fit: BoxFit.cover),
                             ),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Hidup Dengan Duka',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                )
-                              ],
-                            ),
-                          )),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    '',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ),
                       const SizedBox(
                         width: 10,
                       ),
-                      Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: const DecorationImage(
-                              image: AssetImage(''),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/4.png'),
+                                  fit: BoxFit.cover),
                             ),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Hidup Dengan Duka',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                )
-                              ],
-                            ),
-                          )),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    '',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ),
                       const SizedBox(
                         width: 12,
                       ),
-                      Container(
-                          width: 250,
-                          height: 150,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(24),
-                            color: const Color.fromARGB(255, 146, 146, 146),
-                            image: const DecorationImage(
-                              image: AssetImage(''),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: const Text('Close'))
+                                ],
+                                title: const Text(
+                                    'Maaf Aplikasi Sedang Dalam Pengembangan'),
+                                contentPadding: const EdgeInsets.all(10)),
+                          );
+                        },
+                        child: Container(
+                            width: 250,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: const Color.fromARGB(255, 146, 146, 146),
+                              image: const DecorationImage(
+                                  image: AssetImage('assets/images/5.png'),
+                                  fit: BoxFit.cover),
                             ),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(
-                                  'Hidup Dengan Duka',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                )
-                              ],
-                            ),
-                          )),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              child: const Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(
+                                    '',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w500),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ),
                     ],
                   ),
                 ),
@@ -548,7 +635,7 @@ class _HomeState extends State<Home> {
                                   children: [
                                     Container(
                                       height: 60,
-                                      width: 155.2,
+                                      width: 142,
                                       decoration: const BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.only(
@@ -572,7 +659,7 @@ class _HomeState extends State<Home> {
                                                           color:
                                                               Color(0xFF757575),
                                                           fontFamily: 'Poppins',
-                                                          fontSize: 8,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.bold)),
                                                   TextSpan(
@@ -580,7 +667,7 @@ class _HomeState extends State<Home> {
                                                           'Kesehatan Mental:\n',
                                                       style: TextStyle(
                                                           fontFamily: 'Poppins',
-                                                          fontSize: 9,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.bold)),
                                                   TextSpan(
@@ -588,7 +675,7 @@ class _HomeState extends State<Home> {
                                                           'Pentingnya Merawat Diri',
                                                       style: TextStyle(
                                                           fontFamily: 'Poppins',
-                                                          fontSize: 9,
+                                                          fontSize: 10,
                                                           fontWeight:
                                                               FontWeight.bold)),
                                                 ]))
@@ -607,76 +694,84 @@ class _HomeState extends State<Home> {
                         const SizedBox(
                           width: 12,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width / 2.5,
-                          height: 210,
-                          decoration: ShapeDecoration(
-                              color: Colors.grey,
-                              image: const DecorationImage(
-                                  image: AssetImage(''), fit: BoxFit.fill),
-                              shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFFE5E7EB)),
-                                  borderRadius: BorderRadius.circular(24))),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 155.2,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(22),
-                                          bottomRight: Radius.circular(22)),
-                                    ),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(7),
-                                      child: const Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Text.rich(TextSpan(children: [
-                                                TextSpan(
-                                                    text: '5-10 Menit\n',
-                                                    style: TextStyle(
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 8,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                TextSpan(
-                                                    text: 'Kesehatan Mental:\n',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 9,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                TextSpan(
-                                                    text:
-                                                        'Pentingnya Merawat Diri',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 9,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ]))
-                                            ],
-                                          ),
-                                        ],
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/kecanduan_game');
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 2.5,
+                            height: 210,
+                            decoration: ShapeDecoration(
+                                color: Colors.grey,
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/kecanduan_game.png'),
+                                    fit: BoxFit.cover),
+                                shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        width: 1, color: Color(0xFFE5E7EB)),
+                                    borderRadius: BorderRadius.circular(24))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 142,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(22),
+                                            bottomRight: Radius.circular(22)),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
+                                      child: Container(
+                                        padding: const EdgeInsets.all(7),
+                                        child: const Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text.rich(TextSpan(children: [
+                                                  TextSpan(
+                                                      text: '5-10 Menit\n',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Color(0xFF757575),
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Kecanduan Game: Ketika\n',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Hobi Menjadi Ketergantungan',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                ]))
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],
@@ -693,162 +788,176 @@ class _HomeState extends State<Home> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width / 2.5,
-                          height: 210,
-                          decoration: ShapeDecoration(
-                              color: Colors.grey,
-                              image: const DecorationImage(
-                                  image: AssetImage(''), fit: BoxFit.fill),
-                              shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFFE5E7EB)),
-                                  borderRadius: BorderRadius.circular(24))),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 155.2,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(22),
-                                          bottomRight: Radius.circular(22)),
-                                    ),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(7),
-                                      child: const Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Text.rich(TextSpan(children: [
-                                                TextSpan(
-                                                    text: '5-10 Menit\n',
-                                                    style: TextStyle(
-                                                        color:
-                                                            Color(0xFF757575),
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 8,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                TextSpan(
-                                                    text: 'Kesehatan Mental:\n',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 9,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                                TextSpan(
-                                                    text:
-                                                        'Pentingnya Merawat Diri',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 9,
-                                                        fontWeight:
-                                                            FontWeight.bold)),
-                                              ]))
-                                            ],
-                                          ),
-                                        ],
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/gangguan_jiwa');
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 2.5,
+                            height: 210,
+                            decoration: ShapeDecoration(
+                                image: const DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/gangguan_jiwa.png'),
+                                    fit: BoxFit.cover),
+                                shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        width: 1, color: Color(0xFFE5E7EB)),
+                                    borderRadius: BorderRadius.circular(24))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 142,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(22),
+                                            bottomRight: Radius.circular(22)),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
+                                      child: Container(
+                                        padding: const EdgeInsets.all(7),
+                                        child: const Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text.rich(TextSpan(children: [
+                                                  TextSpan(
+                                                      text: '5-10 Menit\n',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Color(0xFF757575),
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Gangguan Mental:\n',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  TextSpan(
+                                                      text:
+                                                          'Apakah Warisan Orangtua ?',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 10,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                ]))
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(
                           width: 12,
                         ),
-                        Container(
-                          width: MediaQuery.of(context).size.width / 2.5,
-                          height: 210,
-                          decoration: ShapeDecoration(
-                              color: Colors.grey,
-                              image: const DecorationImage(
-                                  image: AssetImage('g'), fit: BoxFit.fill),
-                              shape: RoundedRectangleBorder(
-                                  side: const BorderSide(
-                                      width: 1, color: Color(0xFFE5E7EB)),
-                                  borderRadius: BorderRadius.circular(24))),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 155.2,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(22),
-                                          bottomRight: Radius.circular(22)),
-                                    ),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(7),
-                                      child: const Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: [
-                                              Text.rich(
-                                                TextSpan(
-                                                  children: [
-                                                    TextSpan(
-                                                        text: '5-10 Menit\n',
-                                                        style: TextStyle(
-                                                            color: Color(
-                                                                0xFF757575),
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 8,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Kesehatan Mental:\n',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                    TextSpan(
-                                                        text:
-                                                            'Pentingnya Merawat Diri',
-                                                        style: TextStyle(
-                                                            fontFamily:
-                                                                'Poppins',
-                                                            fontSize: 9,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .bold)),
-                                                  ],
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ],
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/macam_phobia');
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 2.5,
+                            height: 210,
+                            decoration: ShapeDecoration(
+                                color: Colors.grey,
+                                image: const DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/phobia.png'),
+                                    fit: BoxFit.fill),
+                                shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        width: 1, color: Color(0xFFE5E7EB)),
+                                    borderRadius: BorderRadius.circular(24))),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 60,
+                                      width: 142,
+                                      decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(22),
+                                            bottomRight: Radius.circular(22)),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              )
-                            ],
+                                      child: Container(
+                                        padding: const EdgeInsets.all(7),
+                                        child: const Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                    children: [
+                                                      TextSpan(
+                                                          text: '5-10 Menit\n',
+                                                          style: TextStyle(
+                                                              color: Color(
+                                                                  0xFF757575),
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              fontSize: 10,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold)),
+                                                      TextSpan(
+                                                          text:
+                                                              'Macam -Macam Phobia:\n',
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              fontSize: 10,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold)),
+                                                      TextSpan(
+                                                          text:
+                                                              'Ketakutan yang Ekstrem',
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              fontSize: 10,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold)),
+                                                    ],
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

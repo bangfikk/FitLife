@@ -11,6 +11,7 @@ class _MeditasiState extends State<Meditasi> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SingleChildScrollView(
@@ -32,85 +33,68 @@ class _MeditasiState extends State<Meditasi> {
                   ),
                 ),
               ),
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Meditasi',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 50,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              letterSpacing: 1),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Center(
+                    child: Text(
+                      'Meditasi',
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          letterSpacing: 1),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 250,
+                        height: 50,
+                        child: TextField(
+                          decoration: InputDecoration(
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: BorderSide.none),
+                            hintText: "Search...",
+                            prefixIcon: const Icon(Icons.search),
+                          ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 24,
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: 250,
-                                height: 50,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      border: OutlineInputBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          borderSide: BorderSide.none),
-                                      hintText: "Serch",
-                                      prefixIcon: const Icon(Icons.search)),
-                                ),
-                              ),
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: ShapeDecoration(
-                                  color: const Color(0xFF003FE9),
-                                  shape: RoundedRectangleBorder(
-                                    side: const BorderSide(
-                                        width: 0.50, color: Colors.white),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 30,
-                                      height: 30,
-                                      decoration: const BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  'assets/images/pengingat.png'),
-                                              fit: BoxFit.fill)),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
-                          )
-                        ],
                       ),
-                    )
-                  ],
-                ),
+                      Container(
+                        width: 50,
+                        height: 50,
+                        decoration: ShapeDecoration(
+                          color: const Color(0xFF003FE9),
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                                width: 0.50, color: Colors.white),
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                        child: Center(
+                          child: Container(
+                            width: 30,
+                            height: 30,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/pengingat.png'),
+                                    fit: BoxFit.fill)),
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
               ),
             ),
             Container(
@@ -256,9 +240,8 @@ class _MeditasiState extends State<Meditasi> {
                               height: 210,
                               decoration: ShapeDecoration(
                                   image: const DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/kecanduangame.png'),
-                                      fit: BoxFit.fill),
+                                      image: AssetImage('assets/images/5.png'),
+                                      fit: BoxFit.cover),
                                   shape: RoundedRectangleBorder(
                                       side: const BorderSide(
                                           width: 1, color: Color(0xFFE5E7EB)),
@@ -287,16 +270,7 @@ class _MeditasiState extends State<Meditasi> {
                                               Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    '5-10 MIN',
-                                                    style: TextStyle(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.bold),
-                                                  )
-                                                ],
+                                                children: [],
                                               ),
                                             ],
                                           ),
@@ -316,7 +290,8 @@ class _MeditasiState extends State<Meditasi> {
                               decoration: ShapeDecoration(
                                   color: Colors.cyan,
                                   image: const DecorationImage(
-                                      image: AssetImage(''), fit: BoxFit.fill),
+                                      image: AssetImage('assets/images/2.png'),
+                                      fit: BoxFit.cover),
                                   shape: RoundedRectangleBorder(
                                       side: const BorderSide(
                                           width: 1, color: Color(0xFFE5E7EB)),

@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fitlife/buttom/main_bottom.dart';
 import 'package:fitlife/content/Kecanduan_game.dart';
 import 'package:fitlife/content/Kesehatan_Mental.dart';
+import 'package:fitlife/content/gangguan_jiwa.dart';
+import 'package:fitlife/content/macam_phobia.dart';
 import 'package:fitlife/menu/home_screen.dart';
 import 'package:fitlife/menu/journal_screen.dart';
 import 'package:fitlife/menu/meditasi_screen.dart';
@@ -19,6 +21,7 @@ void main() async {
           appId: "1:271161443317:android:182ea24abcb04e100456bc",
           messagingSenderId: "271161443317",
           projectId: "login-register-fitlife-1b476"));
+
   runApp(const MyApp());
 }
 
@@ -43,6 +46,8 @@ class MyApp extends StatelessWidget {
         '/main_bottom': (context) => const MainBottom(),
         '/kesehatan_mental': (context) => const KesehatanMental(),
         '/kecanduan_game': (context) => const KecanduanGame(),
+        '/gangguan_jiwa': (context) => const GangguanJiwa(),
+        '/macam_phobia': (context) => const MacamPhobia()
       },
     );
   }
