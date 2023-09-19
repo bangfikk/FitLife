@@ -1,7 +1,7 @@
-import 'package:fitlife/menu/Home.dart';
-import 'package:fitlife/menu/Journal.dart';
-import 'package:fitlife/menu/Meditasi.dart';
-import 'package:fitlife/menu/Profile.dart';
+import 'package:fitlife/menu/home_screen.dart';
+import 'package:fitlife/menu/journal_screen.dart';
+import 'package:fitlife/menu/meditasi_screen.dart';
+import 'package:fitlife/menu/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainBottom extends StatefulWidget {
@@ -16,7 +16,12 @@ class _MainBottomState extends State<MainBottom> {
   Color selectedItemColor = Colors.blue; // Warna terpilih
   Color unselectedItemColor = Colors.grey; // Warna yang tidak terpilih
 
-  List<Widget> pageList = <Widget>[Home(), Journal(), Meditasi(), Profile()];
+  List<Widget> pageList = <Widget>[
+    const Home(),
+    const Journal(),
+    const Meditasi(),
+    const Profile()
+  ];
 
   @override
   Widget build(BuildContext context) {

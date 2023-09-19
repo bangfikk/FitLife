@@ -1,7 +1,10 @@
+// ignore_for_file: file_names, avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
-class Kecanduan_Game extends StatelessWidget {
-  const Kecanduan_Game({super.key});
+// ignore: camel_case_types
+class KecanduanGame extends StatelessWidget {
+  const KecanduanGame({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +17,12 @@ class Kecanduan_Game extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 250,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/images/kecanduan_game.png'),
                     fit: BoxFit.cover)),
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 35),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -29,8 +32,8 @@ class Kecanduan_Game extends StatelessWidget {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon:
-                              Icon(Icons.arrow_back_ios, color: Colors.white)),
+                          icon: const Icon(Icons.arrow_back_ios,
+                              color: Colors.white)),
                     ],
                   ),
                   Container(
@@ -46,7 +49,7 @@ class Kecanduan_Game extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
@@ -66,8 +69,8 @@ class Kecanduan_Game extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.all(24),
-            child: Column(
+            padding: const EdgeInsets.all(24),
+            child: const Column(
               children: [
                 Text.rich(TextSpan(
                     text: 'Kecanduan Game : Ketika Hobi Menjadi Ketergantungan',
@@ -79,7 +82,7 @@ class Kecanduan_Game extends StatelessWidget {
           Container(
             height: 235,
             width: MediaQuery.of(context).size.width / 1.1,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/images/kecanduangame2.png'))),
           ),

@@ -14,7 +14,7 @@ class _ProfileState extends State<Profile> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 64),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 64),
           child: Column(
             children: [
               Row(
@@ -23,7 +23,7 @@ class _ProfileState extends State<Profile> {
                   Text.rich(
                     TextSpan(
                       children: [
-                        TextSpan(
+                        const TextSpan(
                           text: 'Akun\n',
                           style: TextStyle(
                             color: Colors.black,
@@ -46,30 +46,31 @@ class _ProfileState extends State<Profile> {
                   Container(
                     width: 40,
                     height: 40,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: AssetImage('assets/images/settings.png'),
                             fit: BoxFit.fill)),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Container(
                 width: 340,
                 height: 100,
                 decoration: ShapeDecoration(
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       begin: Alignment(0.00, -1.00),
                       end: Alignment(0, 1),
                       colors: [Color(0xFF031951), Color(0xFF0332AC)],
                     ),
                     shape: RoundedRectangleBorder(
-                      side: BorderSide(width: 0.50, color: Color(0xFFE5E7EB)),
+                      side: const BorderSide(
+                          width: 0.50, color: Color(0xFFE5E7EB)),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    shadows: [
+                    shadows: const [
                       BoxShadow(
                         color: Color(0x3F000000),
                         blurRadius: 2,
@@ -78,13 +79,13 @@ class _ProfileState extends State<Profile> {
                       ),
                     ]),
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Row(
                     children: [
                       Container(
                         height: 50,
                         width: 50,
-                        decoration: ShapeDecoration(
+                        decoration: const ShapeDecoration(
                           color: Colors.white,
                           image: DecorationImage(
                               image: AssetImage(''), fit: BoxFit.cover),

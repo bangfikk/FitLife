@@ -1,7 +1,10 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
-class Kesehatan_Mental extends StatelessWidget {
-  const Kesehatan_Mental({super.key});
+// ignore: camel_case_types
+class KesehatanMental extends StatelessWidget {
+  const KesehatanMental({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +18,13 @@ class Kesehatan_Mental extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 250,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/metalhealt.png'),
                         fit: BoxFit.cover)),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 35),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 15, vertical: 35),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -30,12 +34,11 @@ class Kesehatan_Mental extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pop(context);
                               },
-                              icon: Icon(Icons.arrow_back_ios,
+                              icon: const Icon(Icons.arrow_back_ios,
                                   color: Colors.black)),
                         ],
                       ),
-                      Container(
-                          child: Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
@@ -47,7 +50,7 @@ class Kesehatan_Mental extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
-                            child: Row(
+                            child: const Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
@@ -61,14 +64,14 @@ class Kesehatan_Mental extends StatelessWidget {
                             ),
                           )
                         ],
-                      ))
+                      )
                     ],
                   ),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(24),
-                child: Column(
+                padding: const EdgeInsets.all(24),
+                child: const Column(
                   children: [
                     Text.rich(TextSpan(
                         text: 'Kesehatan Mental : Pentingnya Merawat Diri',
@@ -80,13 +83,13 @@ class Kesehatan_Mental extends StatelessWidget {
               Container(
                 height: 235,
                 width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/metalhealt2.png'))),
               ),
               Container(
-                padding: EdgeInsets.all(24),
-                child: Column(
+                padding: const EdgeInsets.all(24),
+                child: const Column(
                   children: [
                     Text(
                       'kesehatan mental adalah aspek penting dari kesehatan secara keseluruhan.terkadang,kita terlalu fokus pada kesehatan fisik kita dan melupakan betapa pentingnya merawat kesehatan mental kita.kesehatan mental yang baik dapat memberikan kita kualitas hidup yang lebih baik,mempngaruhi kemampuan kita dalam mengatasi strees,dan meningkatkan hubungan sosial kita',
@@ -96,8 +99,9 @@ class Kesehatan_Mental extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                child: Column(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                child: const Column(
                   children: [
                     Text(
                         'tips yang dapat membantu Anda menjaga kesehatan mental Anda:\n',
@@ -109,80 +113,58 @@ class Kesehatan_Mental extends StatelessWidget {
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '2. Makan Sehat: Pola makan yang seimbang dan kaya gizi dapat memengaruhi suasana hati dan energi Anda. Konsumsi makanan yang mengandung nutrisi penting, seperti vitamin, mineral, serat, dan protein.'),
-                    ),
+                    Text(
+                        '2. Makan Sehat: Pola makan yang seimbang dan kaya gizi dapat memengaruhi suasana hati dan energi Anda. Konsumsi makanan yang mengandung nutrisi penting, seperti vitamin, mineral, serat, dan protein.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '3. Berolahraga secara Teratur: Aktivitas fisik dapat melepaskan endorfin, zat kimia yang dapat meningkatkan suasana hati. Lakukan olahraga yang Anda nikmati secara teratur, baik itu berjalan kaki, berlari, yoga, atau olahraga lainnya.'),
-                    ),
+                    Text(
+                        '3. Berolahraga secara Teratur: Aktivitas fisik dapat melepaskan endorfin, zat kimia yang dapat meningkatkan suasana hati. Lakukan olahraga yang Anda nikmati secara teratur, baik itu berjalan kaki, berlari, yoga, atau olahraga lainnya.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '4. Praktikkan Teknik Relaksasi: Teknik-teknik seperti meditasi, pernapasan dalam, dan yoga dapat membantu meredakan stres, meningkatkan fokus, dan mengurangi kecemasan.'),
-                    ),
+                    Text(
+                        '4. Praktikkan Teknik Relaksasi: Teknik-teknik seperti meditasi, pernapasan dalam, dan yoga dapat membantu meredakan stres, meningkatkan fokus, dan mengurangi kecemasan.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '5. Hindari Konsumsi Alkohol dan Narkoba Berlebihan: Penggunaan alkohol dan narkoba yang berlebihan dapat merusak kesehatan mental. Lebih baik mencari cara-cara sehat untuk mengatasi stres dan kesulitan.'),
-                    ),
+                    Text(
+                        '5. Hindari Konsumsi Alkohol dan Narkoba Berlebihan: Penggunaan alkohol dan narkoba yang berlebihan dapat merusak kesehatan mental. Lebih baik mencari cara-cara sehat untuk mengatasi stres dan kesulitan.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '6. Atur Batasan Waktu Layar: Terlalu banyak waktu di depan layar (telepon, komputer, TV) dapat memengaruhi tidur dan kesejahteraan mental. Tetapkan batasan waktu untuk penggunaan layar dan pastikan Anda memiliki waktu untuk beraktivitas di luar ruangan dan bersosialisasi.'),
-                    ),
+                    Text(
+                        '6. Atur Batasan Waktu Layar: Terlalu banyak waktu di depan layar (telepon, komputer, TV) dapat memengaruhi tidur dan kesejahteraan mental. Tetapkan batasan waktu untuk penggunaan layar dan pastikan Anda memiliki waktu untuk beraktivitas di luar ruangan dan bersosialisasi.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '7. Pertahankan Hubungan Sosial yang Positif: Hubungan sosial yang baik dapat memberikan dukungan emosional dan mengurangi perasaan isolasi. Jaga komunikasi dengan keluarga, teman, dan orang-orang yang Anda cintai.'),
-                    ),
+                    Text(
+                        '7. Pertahankan Hubungan Sosial yang Positif: Hubungan sosial yang baik dapat memberikan dukungan emosional dan mengurangi perasaan isolasi. Jaga komunikasi dengan keluarga, teman, dan orang-orang yang Anda cintai.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '8. Cari Kegiatan yang Anda Nikmati: Luangkan waktu untuk melakukan aktivitas yang Anda sukai dan yang membuat Anda merasa bahagia. Ini bisa berupa hobi, seni, musik, membaca, atau apa pun yang membuat Anda merasa bersemangat.'),
-                    ),
+                    Text(
+                        '8. Cari Kegiatan yang Anda Nikmati: Luangkan waktu untuk melakukan aktivitas yang Anda sukai dan yang membuat Anda merasa bahagia. Ini bisa berupa hobi, seni, musik, membaca, atau apa pun yang membuat Anda merasa bersemangat.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '9. Mencari Bantuan Profesional: Jika Anda merasa kesulitan mengatasi masalah atau perasaan yang mengganggu, jangan ragu untuk mencari bantuan dari profesional kesehatan mental, seperti psikolog atau psikiater.'),
-                    ),
+                    Text(
+                        '9. Mencari Bantuan Profesional: Jika Anda merasa kesulitan mengatasi masalah atau perasaan yang mengganggu, jangan ragu untuk mencari bantuan dari profesional kesehatan mental, seperti psikolog atau psikiater.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '10. adwalkan Istirahat dan Waktu untuk Diri Sendiri: Alihkan waktu untuk beristirahat dan merenung. Dalam kehidupan yang sibuk, penting untuk memberi diri sendiri waktu untuk merenung dan mengisi ulang energi.'),
-                    ),
+                    Text(
+                        '10. adwalkan Istirahat dan Waktu untuk Diri Sendiri: Alihkan waktu untuk beristirahat dan merenung. Dalam kehidupan yang sibuk, penting untuk memberi diri sendiri waktu untuk merenung dan mengisi ulang energi.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '11. Tetapkan Tujuan yang Realistis Menetapkan tujuan yang realistis dan mencapai mereka dapat memberi Anda rasa pencapaian dan meningkatkan harga diri.'),
-                    ),
+                    Text(
+                        '11. Tetapkan Tujuan yang Realistis Menetapkan tujuan yang realistis dan mencapai mereka dapat memberi Anda rasa pencapaian dan meningkatkan harga diri.'),
                     SizedBox(
                       height: 15,
                     ),
-                    Container(
-                      child: Text(
-                          '12. Latih Cara Mengatasi Stres: Pelajari keterampilan mengatasi stres, seperti manajemen waktu, pengaturan prioritas, dan mengatasi pikiran negatif.'),
-                    ),
+                    Text(
+                        '12. Latih Cara Mengatasi Stres: Pelajari keterampilan mengatasi stres, seperti manajemen waktu, pengaturan prioritas, dan mengatasi pikiran negatif.'),
                     SizedBox(
                       height: 20,
                     ),
