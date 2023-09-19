@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Journal extends StatefulWidget {
-  const Journal({super.key});
+  const Journal({Key? key}) : super(key: key);
 
   @override
   State<Journal> createState() => _JournalState();
@@ -96,149 +97,104 @@ class _JournalState extends State<Journal> {
                   ],
                 ),
               ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      height: 210,
-                      decoration: ShapeDecoration(
-                        image: const DecorationImage(
-                            image: AssetImage('assets/images/metalhealt.png'),
-                            fit: BoxFit.cover),
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(
-                            width: 1,
-                            color: Color(0xFFE5E7EB),
-                          ),
-                          borderRadius: BorderRadius.circular(24),
+
+              //artikel
+              StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+                stream: FirebaseFirestore.instance
+                    .collection("artikel")
+                    .snapshots(),
+                builder: (_, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const CircularProgressIndicator(
+                      color: Colors.black,
+                    );
+                  }
+                  List<QueryDocumentSnapshot<Map<String, dynamic>>> data =
+                      snapshot.data!.docs;
+
+                  if (data.isNotEmpty) {
+                    return Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 16),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: List.generate(
+                          data.length,
+                          (index) {
+                            DocumentSnapshot<Map<String, dynamic>> docs =
+                                data[index];
+                            return _listArtikel(context, docs);
+                          },
                         ),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            height: 70,
-                            width: 180,
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(22),
-                                bottomRight: Radius.circular(22),
-                              ),
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(7),
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text.rich(
-                                    TextSpan(
-                                      children: [
-                                        TextSpan(
-                                            text: '5-10 Menit\n',
-                                            style: TextStyle(
-                                                color: Color(0xFF757575),
-                                                fontFamily: 'Poppins',
-                                                fontSize: 8,
-                                                fontWeight: FontWeight.bold)),
-                                        TextSpan(
-                                            text: 'Kesehatan Mental:\n',
-                                            style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold)),
-                                        TextSpan(
-                                            text: 'Pentingnya Merawat Diri',
-                                            style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      height: 210,
-                      decoration: ShapeDecoration(
-                        image: const DecorationImage(
-                            image:
-                                AssetImage('assets/images/kecanduangame.png'),
-                            fit: BoxFit.cover),
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(
-                            width: 1,
-                            color: Color(0xFFE5E7EB),
-                          ),
-                          borderRadius: BorderRadius.circular(24),
-                        ),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Container(
-                            height: 70,
-                            width: 180,
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(22),
-                                bottomRight: Radius.circular(22),
-                              ),
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(7),
-                              child: const Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text.rich(
-                                    TextSpan(
-                                      children: [
-                                        TextSpan(
-                                            text: '5-10 Menit\n',
-                                            style: TextStyle(
-                                                color: Color(0xFF757575),
-                                                fontFamily: 'Poppins',
-                                                fontSize: 8,
-                                                fontWeight: FontWeight.bold)),
-                                        TextSpan(
-                                            text: 'Kesehatan Mental:\n',
-                                            style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold)),
-                                        TextSpan(
-                                            text: 'Pentingnya Merawat Diri',
-                                            style: TextStyle(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.bold)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                    );
+                  } else {
+                    return Container(); // Add this line to handle the empty case
+                  }
+                },
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _listArtikel(
+      BuildContext context, DocumentSnapshot<Map<String, dynamic>> docs) {
+    return Container(
+      width: MediaQuery.of(context).size.width / 2.3,
+      height: 210,
+      decoration: ShapeDecoration(
+        image: DecorationImage(
+            image: NetworkImage(docs["gambar"]), fit: BoxFit.cover),
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(
+            width: 1,
+            color: Color(0xFFE5E7EB),
+          ),
+          borderRadius: BorderRadius.circular(24),
+        ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Container(
+            height: 70,
+            width: 180,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(22),
+                bottomRight: Radius.circular(22),
+              ),
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(7),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    docs["durasi"].toString(),
+                    style: const TextStyle(
+                        color: Color(0xFF757575),
+                        fontFamily: 'Poppins',
+                        fontSize: 8,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    docs["judul"].toString(),
+                    style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
