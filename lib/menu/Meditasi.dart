@@ -18,7 +18,7 @@ class _MeditasiState extends State<Meditasi> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height / 3,
+              height: MediaQuery.of(context).size.height / 2.70,
               decoration: ShapeDecoration(
                 gradient: LinearGradient(
                   begin: Alignment(0.00, -1.00),
@@ -88,20 +88,16 @@ class _MeditasiState extends State<Meditasi> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                 ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                      width: 30,
-                                      height: 30,
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                              image: AssetImage(
-                                                  'assets/images/pengingat.png'),
-                                              fit: BoxFit.fill)),
-                                    )
-                                  ],
-                                ),
+                                child: Center(
+                                    child: Container(
+                                  width: 30,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/pengingat.png'),
+                                          fit: BoxFit.fill)),
+                                )),
                               )
                             ],
                           )
@@ -117,10 +113,10 @@ class _MeditasiState extends State<Meditasi> {
               child: Column(
                 children: [
                   Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          width: 155,
+                          width: 150,
                           height: 220,
                           decoration: ShapeDecoration(
                               image: DecorationImage(
@@ -167,7 +163,7 @@ class _MeditasiState extends State<Meditasi> {
                           ),
                         ),
                         Container(
-                          width: 155,
+                          width: 150,
                           height: 220,
                           decoration: ShapeDecoration(
                               image: DecorationImage(
@@ -231,19 +227,17 @@ class _MeditasiState extends State<Meditasi> {
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Semua Meditasi',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 15,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Semua Meditasi',
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 20),

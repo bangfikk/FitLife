@@ -1,13 +1,16 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitlife/Home.dart';
-import 'package:fitlife/Journal.dart';
-import 'package:fitlife/Journal_1.dart';
-import 'package:fitlife/Login.dart';
-import 'package:fitlife/Meditasi.dart';
-import 'package:fitlife/Profile.dart';
-import 'package:fitlife/Register.dart';
+
 import 'package:fitlife/buttom/main_bottom.dart';
-import 'package:fitlife/splash_screen.dart';
+import 'package:fitlife/content/Kecanduan_Game.dart';
+import 'package:fitlife/content/Kesehatan_Mental.dart';
+import 'package:fitlife/menu/Home.dart';
+import 'package:fitlife/menu/Journal.dart';
+import 'package:fitlife/menu/Meditasi.dart';
+import 'package:fitlife/menu/Profile.dart';
+
+import 'package:fitlife/splashscreen/Login.dart';
+import 'package:fitlife/splashscreen/Register.dart';
+import 'package:fitlife/splashscreen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
       title: 'FitLife',
-      initialRoute: '/splashscreen',
+      initialRoute: '/main_bottom',
       routes: {
         '/splashscreen': (context) => SplaschScreen(),
         '/login': (context) => Login(),
@@ -37,8 +40,9 @@ class MyApp extends StatelessWidget {
         '/journal': (context) => Journal(),
         '/meditasi': (context) => Meditasi(),
         '/profile': (context) => Profile(),
-        '/journal_1': (context) => Journal_1(),
-        '/main_bottom': (context) => MainBottom()
+        '/kesehatan_mental': (context) => Kesehatan_Mental(),
+        '/kecanduan_game': (context) => Kecanduan_Game(),
+        '/main_bottom': (context) => MainBottom(),
       },
     );
   }

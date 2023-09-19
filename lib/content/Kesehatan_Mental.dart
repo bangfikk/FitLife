@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Journal_1 extends StatelessWidget {
-  const Journal_1({super.key});
+class Kesehatan_Mental extends StatelessWidget {
+  const Kesehatan_Mental({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +82,7 @@ class Journal_1 extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/image.png'))),
+                        image: AssetImage('assets/images/metalhealt2.png'))),
               ),
               Container(
                 padding: EdgeInsets.all(24),
@@ -103,10 +103,8 @@ class Journal_1 extends StatelessWidget {
                         'tips yang dapat membantu Anda menjaga kesehatan mental Anda:\n',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold)),
-                    Container(
-                      child: Text(
-                        '1. Jaga Pola Tidur yang Teratur: Tidur yang cukup dan berkualitas sangat penting bagi kesehatan mental. Usahakan untuk tidur 7-9 jam setiap malam dan pertahankan jadwal tidur yang konsisten.',
-                      ),
+                    Text(
+                      '1. Jaga Pola Tidur yang Teratur: Tidur yang cukup dan berkualitas sangat penting bagi kesehatan mental. Usahakan untuk tidur 7-9 jam setiap malam dan pertahankan jadwal tidur yang konsisten.',
                     ),
                     SizedBox(
                       height: 15,

@@ -57,9 +57,9 @@ class _ProfileState extends State<Profile> {
                 height: 40,
               ),
               Container(
-                  width: 340,
-                  height: 100,
-                  decoration: ShapeDecoration(
+                width: 340,
+                height: 100,
+                decoration: ShapeDecoration(
                     gradient: LinearGradient(
                       begin: Alignment(0.00, -1.00),
                       end: Alignment(0, 1),
@@ -69,7 +69,34 @@ class _ProfileState extends State<Profile> {
                       side: BorderSide(width: 0.50, color: Color(0xFFE5E7EB)),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                  )),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0x3F000000),
+                        blurRadius: 2,
+                        offset: Offset(0, 2),
+                        spreadRadius: 0,
+                      ),
+                    ]),
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: 50,
+                        decoration: ShapeDecoration(
+                          color: Colors.white,
+                          image: DecorationImage(
+                              image: AssetImage(''), fit: BoxFit.cover),
+                          shape: OvalBorder(
+                            side: BorderSide(width: 1, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),

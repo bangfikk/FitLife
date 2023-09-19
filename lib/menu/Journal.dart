@@ -18,7 +18,7 @@ class _JournalState extends State<Journal> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height / 3,
+                height: MediaQuery.of(context).size.height / 2.70,
                 decoration: ShapeDecoration(
                   gradient: LinearGradient(
                     begin: Alignment(0.00, -1.00),
@@ -63,7 +63,7 @@ class _JournalState extends State<Journal> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Container(
-                                  width: 270,
+                                  width: 250,
                                   height: 50,
                                   child: TextField(
                                     decoration: InputDecoration(
@@ -88,20 +88,16 @@ class _JournalState extends State<Journal> {
                                       borderRadius: BorderRadius.circular(15),
                                     ),
                                   ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        width: 30,
-                                        height: 30,
-                                        decoration: BoxDecoration(
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    'assets/images/pengingat.png'),
-                                                fit: BoxFit.fill)),
-                                      )
-                                    ],
-                                  ),
+                                  child: Center(
+                                      child: Container(
+                                    width: 30,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                'assets/images/pengingat.png'),
+                                            fit: BoxFit.fill)),
+                                  )),
                                 )
                               ],
                             )
@@ -139,7 +135,7 @@ class _JournalState extends State<Journal> {
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 155.2,
+                                        width: 142,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius: BorderRadius.only(
@@ -222,7 +218,7 @@ class _JournalState extends State<Journal> {
                                     children: [
                                       Container(
                                         height: 60,
-                                        width: 155.2,
+                                        width: 142,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius: BorderRadius.only(

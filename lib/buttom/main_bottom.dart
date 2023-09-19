@@ -1,7 +1,7 @@
-import 'package:fitlife/Home.dart';
-import 'package:fitlife/Journal.dart';
-import 'package:fitlife/Meditasi.dart';
-import 'package:fitlife/Profile.dart';
+import 'package:fitlife/menu/Home.dart';
+import 'package:fitlife/menu/Journal.dart';
+import 'package:fitlife/menu/Meditasi.dart';
+import 'package:fitlife/menu/Profile.dart';
 import 'package:flutter/material.dart';
 
 class MainBottom extends StatefulWidget {
@@ -13,6 +13,9 @@ class MainBottom extends StatefulWidget {
 
 class _MainBottomState extends State<MainBottom> {
   int pageIndex = 0;
+  Color selectedItemColor = Colors.blue; // Warna terpilih
+  Color unselectedItemColor = Colors.grey; // Warna yang tidak terpilih
+
   List<Widget> pageList = <Widget>[Home(), Journal(), Meditasi(), Profile()];
 
   @override
@@ -20,8 +23,8 @@ class _MainBottomState extends State<MainBottom> {
     return Scaffold(
       body: pageList[pageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: selectedItemColor,
+        unselectedItemColor: unselectedItemColor,
         type: BottomNavigationBarType.fixed,
         currentIndex: pageIndex,
         onTap: (value) {
@@ -31,19 +34,35 @@ class _MainBottomState extends State<MainBottom> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: pageIndex == 0
+                ? Image.asset('assets/images/bottom_home.png',
+                    color: Colors.blue, width: 30, height: 30)
+                : Image.asset('assets/images/bottom_home.png',
+                    color: Colors.grey, width: 30, height: 30),
             label: 'Beranda',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notes_outlined),
+            icon: pageIndex == 1
+                ? Image.asset('assets/images/bottom_journal.png',
+                    color: Colors.blue, width: 30, height: 30)
+                : Image.asset('assets/images/bottom_journal.png',
+                    color: Colors.grey, width: 30, height: 30),
             label: 'Journal',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bungalow),
+            icon: pageIndex == 2
+                ? Image.asset('assets/images/bottom_meditasi.png',
+                    color: Colors.blue, width: 30, height: 30)
+                : Image.asset('assets/images/bottom_meditasi.png',
+                    color: Colors.grey, width: 30, height: 30),
             label: 'Meditasi',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: pageIndex == 3
+                ? Image.asset('assets/images/bottom_profile.png',
+                    color: Colors.blue, width: 30, height: 30)
+                : Image.asset('assets/images/bottom_profile.png',
+                    color: Colors.grey, width: 30, height: 30),
             label: 'Profile',
           ),
         ],
