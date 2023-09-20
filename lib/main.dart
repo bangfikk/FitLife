@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitlife/buttom/main_bottom.dart';
 import 'package:fitlife/content/Kecanduan_game.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: 'Poppins'),
       debugShowCheckedModeBanner: false,
       title: 'FitLife',
-      initialRoute: '/login',
+      home: const AuthChecker(), // Use AuthChecker as the initial route
       routes: {
         '/splashscreen': (context) => const SplaschScreen(),
         '/login': (context) => const Login(),
@@ -48,6 +49,29 @@ class MyApp extends StatelessWidget {
         '/kecanduan_game': (context) => const KecanduanGame(),
         '/gangguan_jiwa': (context) => const GangguanJiwa(),
         '/macam_phobia': (context) => const MacamPhobia()
+      },
+    );
+  }
+}
+
+class AuthChecker extends StatelessWidget {
+  const AuthChecker({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // Firebase is still initializing, return a loading screen if needed
+          return const CircularProgressIndicator();
+        } else if (snapshot.hasData && snapshot.data != null) {
+          // User is already logged in, navigate to MainBottom
+          return const MainBottom();
+        } else {
+          // User is not logged in, navigate to Login
+          return const Login();
+        }
       },
     );
   }
